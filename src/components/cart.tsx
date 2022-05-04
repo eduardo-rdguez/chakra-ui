@@ -6,11 +6,17 @@ import {
   HStack,
   Stack,
   Text,
+  useColorMode,
+  useColorModeValue,
   VStack,
-} from '@chakra-ui/react';
-import Image from 'next/image';
+} from "@chakra-ui/react";
+import Image from "next/image";
 
 const Cart = () => {
+  const { toggleColorMode } = useColorMode();
+  const bgColor = useColorModeValue("gray.50", "whiteAlpha.100");
+  const secondaryColor = useColorModeValue("gray.600", "gray.400");
+
   return (
     <VStack
       w="full"
@@ -18,7 +24,7 @@ const Cart = () => {
       p={10}
       spacing={10}
       alignItems="flex-start"
-      bg="gray.50"
+      bg={bgColor}
     >
       <VStack alignItems="flex-start" spacing={3}>
         <Heading size="2xl">Your cart</Heading>
@@ -47,7 +53,7 @@ const Cart = () => {
         >
           <VStack w="full" spacing={0} alignItems="center">
             <Heading size="md">Penny board</Heading>
-            <Text color="gray.600">PNYCOMP27551</Text>
+            <Text color={secondaryColor}>PNYCOMP27551</Text>
           </VStack>
           <Heading size="sm" textAlign="center">
             $199.00
@@ -56,20 +62,20 @@ const Cart = () => {
       </HStack>
       <VStack w="full" spacing={4} alignItems="search">
         <HStack justifyContent="space-between">
-          <Text color="gray.600">Subtotal</Text>
+          <Text color={secondaryColor}>Subtotal</Text>
           <Heading size="sm">$119.00</Heading>
         </HStack>
         <HStack justifyContent="space-between">
-          <Text color="gray.600">Shipping</Text>
+          <Text color={secondaryColor}>Shipping</Text>
           <Heading size="sm">$19.99</Heading>
         </HStack>
         <HStack justifyContent="space-between">
-          <Text color="gray.600">Taxes (estimated)</Text>
+          <Text color={secondaryColor}>Taxes (estimated)</Text>
           <Heading size="sm">$23.80</Heading>
         </HStack>
         <Divider />
         <HStack justifyContent="space-between">
-          <Text color="gray.600">Total</Text>
+          <Text color={secondaryColor}>Total</Text>
           <Heading size="lg">$162.79</Heading>
         </HStack>
       </VStack>
