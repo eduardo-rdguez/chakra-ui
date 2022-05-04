@@ -30,7 +30,7 @@ const Cart = () => {
         <Heading size="2xl">Your cart</Heading>
         <Text>
           If the price is too hard on your eyes
-          <Button variant="link" colorScheme="black">
+          <Button onClick={toggleColorMode} variant="link" colorScheme="black">
             &nbsp;try changing the theme.
           </Button>
         </Text>
